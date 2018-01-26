@@ -53,3 +53,18 @@ import string
 for sentence in lower_case_documents:
   sans_punctuation_documents.append(sentence.translate(str.maketrans('','',string.punctuation)))
 
+#Tokenize the strings using split()
+preprocessed_documents = []
+for sentence in sans_punctuation_documents:
+  preprocessed_documents.append(sentence.split(" "))
+
+#Count frequencies using counter method
+frequency_list = []
+import pprint
+from collections import Counter 
+
+for word in prepocessed_documents:
+  frequency_counts = Counter(i) 
+  frequency_list.append(frequency_counts)
+pprint.pprint(frequency_list)
+
