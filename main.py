@@ -68,3 +68,22 @@ for word in prepocessed_documents:
   frequency_list.append(frequency_counts)
 pprint.pprint(frequency_list)
 
+"""
+Implementing Bag of Words in scikit-learn!
+"""
+documents = ['Hello, how are you!',
+              'Win money, win from home.',
+              'Call me now',
+              'Hello, Call hello you tomorrow?']
+
+from sklearn.feature_extraction.text import CountVectorizer 
+count_vector = CountVectorizer(stop_words='english') #lowercase parameter default = True , removes all punctuations
+
+count_vector.fit(documents)
+count_vector.get_feature_names(stop_words="english") #returns feature names for this dataset, which make up the vocab for documents
+doc_array = count_vector.transform(documents).toarray()
+doc_array
+
+#Convert the array into a dataframe and set the column names to the word names
+frequency_matrix = pd.DataFrame(doc_array, 
+                                columns = count_vector.get_feature_names())
