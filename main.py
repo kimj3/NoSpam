@@ -103,4 +103,27 @@ Training and testing set
 
 #Split the dataset into a training and testing set in order to test the model later
 
+from sklearn.cross_validation import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(df['sms_message'],
+                                                    df['label'],
+                                                    random_state=1)
+
+
+
+
+
+"""Bag of words and convert the data into the desired matrix format using CountVectorizer()
+-First, fir the training data(x_train) into CountVectorizer() and return the matrix
+-Second, transform the testing data(x_test) to return the matrix
+x_test is the testing data for the 'sms_message' column and will be used to make predictions on by comparing the predictions with y_test later
+"""
+
+#Instantitate the CountVectorizer method
+count_vector = CountVectorizer()
+
+#Fit the training data and return the matrix
+training_data = count_vector.fit_transform(x_train)
+
+#Transform testing ata and return the matrix. 
 
