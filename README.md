@@ -1,4 +1,5 @@
 # NoSpam
-#classifies dataset SMS messages as spam or not spam by using the Naive Bayes algorithm# 
+
+__classifies dataset SMS messages as spam or not spam by using the Naive Bayes algorithm__
 
 
