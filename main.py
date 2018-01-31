@@ -87,3 +87,20 @@ doc_array
 #Convert the array into a dataframe and set the column names to the word names
 frequency_matrix = pd.DataFrame(doc_array, 
                                 columns = count_vector.get_feature_names())
+
+
+#____________________________________________________________________________________ Bag of Words problem completed!
+
+"""
+Training and testing set
+
+                      *Note*
+1) x_train = training data for the "sms_message" column
+2) y_train = training data for the 'label' column
+3) x_test = testing data for the 'sms_message' column
+4) y_test = testing data for the 'label' column 
+"""
+
+#Split the dataset into a training and testing set in order to test the model later
+
+
